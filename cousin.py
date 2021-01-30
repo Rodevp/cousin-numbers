@@ -29,3 +29,25 @@ def all_you_factors(number) :
     return list_factors_number
 
 
+
+#crea un diccionario con el numero y sus posibles divisores
+def  factors_of_numbers( list_of_numbers ) :
+    numbers_list = convert_to_integers(list_of_numbers)
+    number_and_factors = {}
+    for number in numbers_list:
+        if number != 0 : 
+            list_dividers = all_you_factors(number)
+            number_and_factors[ str( number ) ] = list_dividers
+            number = number - 1
+    
+    return number_and_factors
+
+
+#determina si el numero es primo o no
+def is_cousins( numbers_and_dividers = {} ) :
+    list_of_counsin = []
+    for number, factors in numbers_and_dividers.items() :
+        if len(factors) == 2 :
+            list_of_counsin.append( int(number) )
+    
+    return list_of_counsin
