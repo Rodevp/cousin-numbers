@@ -51,3 +51,16 @@ def is_cousins( numbers_and_dividers = {} ) :
             list_of_counsin.append( int(number) )
     
     return list_of_counsin
+
+
+
+##busca si es natural
+def is_natural( list_numbers ) : 
+
+    list_numbers_natural = []
+
+    for number in list_numbers :
+        if number > 0 :
+            list_numbers_natural.append(number)
+    
+    return list_numbers_natural
