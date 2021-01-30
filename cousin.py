@@ -64,3 +64,17 @@ def is_natural( list_numbers ) :
             list_numbers_natural.append(number)
     
     return list_numbers_natural
+
+
+if __name__ == '__main__':
+    try:
+        numbers =  input('Ingresa maximo 5 numeros y separalos por espacio XD: ').split(' ')
+        numbers_integers = convert_to_integers( numbers )
+        if len(numbers) <= 5:
+            list_numbers_naturals = is_natural( numbers_integers )
+            list_numbers_and_factors = factors_of_numbers( list_numbers_naturals )
+            list_numbers_cousins = is_cousins( list_numbers_and_factors )
+            print(f'De tu lista original {numbers} estos son primos {list_numbers_cousins} ')            
+    except TypeError :
+        print('Excediste el tamaño de los numeros requeridos o no introduciste numeros')
+
